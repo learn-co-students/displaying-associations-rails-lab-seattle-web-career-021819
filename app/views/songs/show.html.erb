@@ -1,0 +1,4 @@
+<h1>This is the '/songs' show view.</h1>
+
+<h2><%= @song.title %></h2>
+  By: <%= link_to @song.artist.name, artist_path(@song.artist) %>
