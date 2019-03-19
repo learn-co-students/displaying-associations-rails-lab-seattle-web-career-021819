@@ -1,0 +1,12 @@
+<h1>This is the '/artists' index view.</h1>
+
+<% @artists.each do |artist| %>
+  <h2>Songs by <%= link_to artist.name, artist_path(artist) %>:</h2>
+    <ul>
+      <% artist.songs.each do |song| %>
+        <li><%= link_to song.title, song_path(song) %></li>
+      <% end %>
+    </ul>
+    <br>
+    <p><%= artist.name %> has <%= artist.songs.count %> songs.</p>
+<% end %>

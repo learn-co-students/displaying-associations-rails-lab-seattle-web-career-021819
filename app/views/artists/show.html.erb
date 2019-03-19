@@ -1,0 +1,16 @@
+<h1>This is the '/artists' show view.</h1>
+
+<h2>Songs by <%= @artist.name %>:</h2>
+<% if @artist.songs %>
+  <ul>
+    <% @artist.songs.each do |song| %>
+      <li><%= link_to song.title, song_path(song) %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<% if @artist.songs %>
+  <p><%= @artist.name %> has <%= @artist.songs.count %> songs.</p>
+<% else %>
+  <p><%= @artist.name %> has no songs.</p>
+<% end %>
