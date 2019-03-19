@@ -1,0 +1,8 @@
+<ul>
+  <% @artists.each do |artist| %>
+    <li>
+      <%= artist.name %><br>
+      <%= artist.songs.count %><%= " song".pluralize(artist.song_count) %>
+    </li>
+  <% end %>
+</ul>
