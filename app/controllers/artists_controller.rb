@@ -1,8 +1,15 @@
 class ArtistsController < ApplicationController
+  def find_artist
+    @artist = Artist.find(params[:id])
+  end
+
   def index
+    @artists = Artist.all
   end
 
   def show
+    find_artist
+    @songs = @artist.songs
   end
 
   def new
