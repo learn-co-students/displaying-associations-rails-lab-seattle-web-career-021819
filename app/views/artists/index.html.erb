@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Artist Index Page</title>
+  </head>
+  <body>
+    <h1>My Artists</h1>
+    <ul>
+      <% @artists.each do |artist| %>
+      <li><%= link_to artist.name, artist_path(artist)%>
+        <%= artist.songs.count %> <%= "song".pluralize(artist.song_count)%>
+      </li>
+      <% end %><br>
+      <%= link_to "Create Artist", new_artist_path %>
+    </ul>
+
+  </body>
+</html>

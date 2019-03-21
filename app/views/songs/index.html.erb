@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Song Index Page</title>
+  </head>
+  <body>
+    <h1>My Songs</h1>
+    <ul>
+      <% @songs.each do |song| %>
+      <li> <%= link_to "#{song.artist.name} - #{song.title}", song_path(song)%> -
+        <%# <%= link_to , song_path(song)%> %>
+      </li>
+      <% end %><br>
+      <%= link_to "Create Song", new_song_path %>
+    </ul>
+
+  </body>
+</html>
